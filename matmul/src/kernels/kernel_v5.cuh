@@ -13,7 +13,7 @@ __global__ void kernel_v5(
     uint32_t M, uint32_t K, uint32_t N,
     scalar_t * C 
 ) {
-	// in v5, we calculate multiple elements of C in one thread, as v4 is bound by shared memory access.
+    // in v5, we calculate multiple elements of C in one thread, as v4 is bound by shared memory access.
 
     // block index
     const uint32_t bm = blockIdx.y;

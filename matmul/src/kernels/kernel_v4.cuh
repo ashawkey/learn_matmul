@@ -13,7 +13,7 @@ __global__ void kernel_v4(
     uint32_t M, uint32_t K, uint32_t N,
     scalar_t * C 
 ) {
-	// in v4, we take advantage of shared memory for more efficient access compared to global memory.
+    // in v4, we take advantage of shared memory for more efficient access compared to global memory.
 
     // block index
     const uint32_t bm = blockIdx.y;

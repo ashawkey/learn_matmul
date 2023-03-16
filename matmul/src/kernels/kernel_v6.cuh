@@ -13,7 +13,7 @@ __global__ void kernel_v6(
     uint32_t M, uint32_t K, uint32_t N,
     scalar_t * C 
 ) {
-	// in v6, we use float4 to vectorize memory access.
+    // in v6, we use float4 to vectorize memory access.
 
     // block index
     const uint32_t bm = blockIdx.y;

@@ -13,7 +13,7 @@ __global__ void kernel_v7_2(
     uint32_t M, uint32_t K, uint32_t N,
     scalar_t * C 
 ) {
-	// in v7, we apply duble buffering.
+    // in v7, we apply duble buffering.
 
     // block index
     const uint32_t bm = blockIdx.y;

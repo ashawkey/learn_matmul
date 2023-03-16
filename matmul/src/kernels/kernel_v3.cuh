@@ -13,7 +13,7 @@ __global__ void kernel_v3(
     uint32_t M, uint32_t K, uint32_t N,
     scalar_t * C 
 ) {
-	// the only change from v2 is the order of thread loops, which leads to 10x acceleration.
+    // the only change from v2 is the order of thread loops, which leads to 10x acceleration.
     // the reason is that the global memory access pattern is more coalesced.
     // by coalescing, we let consecutive threads access consecutive memory locations.
     // i.e., for consecutive threads threadIdx.x = 0, 1, 2, ... in a warp (every 32 threads),
@@ -24,7 +24,7 @@ __global__ void kernel_v3(
     // so the warp can group them and execute memory access as one! and this is where we gain speed.
     const uint32_t m = threadIdx.y + blockIdx.x * blockDim.x;
     const uint32_t n = threadIdx.x + blockIdx.y * blockDim.y;
-	if (m >= M || n >= N) return;
+    if (m >= M || n >= N) return;
 
     A += K * m;
     B += n;

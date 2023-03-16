@@ -13,8 +13,8 @@ __global__ void kernel_v1(
     uint32_t M, uint32_t K, uint32_t N,
     scalar_t * C 
 ) {
-	const uint32_t b = threadIdx.x + blockIdx.x * blockDim.x;
-	if (b >= M * N) return;
+    const uint32_t b = threadIdx.x + blockIdx.x * blockDim.x;
+    if (b >= M * N) return;
 
     const uint32_t m = b / N;
     const uint32_t n = b % N;
